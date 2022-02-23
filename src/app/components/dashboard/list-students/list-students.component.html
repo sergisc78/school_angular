@@ -1,0 +1,30 @@
+<div class="container mt-4">
+    <div class="card">
+      <div class="card-body">
+        <span class="h3 text-center">List of students</span>
+        <h5 style="margin-top: 30px;" *ngIf="students.length ==0">No data to show</h5>
+        <table *ngIf="students.length >0" class="table mt-5 table-striped table-hove">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Last name</th>
+              <th>Grade</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let student of students">
+              <td>{{student.name}}</td>
+              <td>{{student.lastName}}</td>
+              <td>{{student.grade}}</td>
+              <td><i class="fas fa-edit text-info me-3" 
+                  [routerLink]="['/editStudent/',student.id]" routerLinkActive="router-link-active"  title="Edit"></i>
+                <i (click)="deleteStudent(student.id)"class="fas fa-trash-alt text-danger"  title="Delete"></i></td>
+            </tr> 
+            <!--[routerLink]="['/editEmpleado/',editEmpleado.id]"-->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

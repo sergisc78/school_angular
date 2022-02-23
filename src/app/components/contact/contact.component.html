@@ -1,0 +1,27 @@
+<div class="container pt-4">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5>CONTACT US !</h5>
+          <span></span>
+          <form class="mt-4" [formGroup]="createContact" (ngSubmit)="submitContactForm()">
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control form-control-lg" formControlName="name" placeholder="Name">
+              </div>
+              <div class="col">
+                <input type="email" class="form-control form-control-lg" formControlName="email" placeholder="Email">
+              </div>
+            </div>
+            <textarea type="text" class="form-control form-control-lg mt-3" formControlName="message"
+              placeholder="Type your message"></textarea>
+            <div class="mt-3">
+             <button type="submit" class="btn btn-dark btn-lg">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
